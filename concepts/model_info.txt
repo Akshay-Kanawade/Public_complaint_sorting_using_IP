@@ -1,0 +1,87 @@
+
+
+(venv) C:\Users\KANAWADE AKSHAY\desktop\project\pcm>python model.py
+['test', 'train', 'validation']
+(835, 128, 128, 3) (835,)
+(668, 128, 128, 3) (167, 128, 128, 3) (668,) (167,)
+2021-06-08 10:54:12.763395: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)
+ to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d (Conv2D)              (None, 124, 124, 32)      2432
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 120, 120, 32)      25632
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 60, 60, 32)        0
+_________________________________________________________________
+dropout (Dropout)            (None, 60, 60, 32)        0
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 58, 58, 64)        18496
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 56, 56, 64)        36928
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 28, 28, 64)        0
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 28, 28, 64)        0
+_________________________________________________________________
+flatten (Flatten)            (None, 12800)             0
+_________________________________________________________________
+dense (Dense)                (None, 256)               3277056
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 256)               0
+_________________________________________________________________
+dense_1 (Dense)              (None, 64)                16448
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 64)                0
+_________________________________________________________________
+dense_2 (Dense)              (None, 3)                 195
+=================================================================
+Total params: 3,991,843
+Trainable params: 3,991,843
+Non-trainable params: 0
+_________________________________________________________________
+model summary None
+2021-06-08 10:54:19.140912: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+Epoch 1/20
+84/84 [==============================] - 108s 1s/step - loss: 8.5431 - accuracy: 0.3848 - val_loss: 1.0847 - val_accuracy: 0.3772
+Epoch 2/20
+84/84 [==============================] - 108s 1s/step - loss: 0.9929 - accuracy: 0.5366 - val_loss: 0.8236 - val_accuracy: 0.6587
+Epoch 3/20
+84/84 [==============================] - 104s 1s/step - loss: 0.8753 - accuracy: 0.5662 - val_loss: 0.9866 - val_accuracy: 0.5569
+Epoch 4/20
+84/84 [==============================] - 103s 1s/step - loss: 0.9234 - accuracy: 0.5371 - val_loss: 0.9062 - val_accuracy: 0.4491
+Epoch 5/20
+84/84 [==============================] - 103s 1s/step - loss: 0.8433 - accuracy: 0.6185 - val_loss: 0.8937 - val_accuracy: 0.6108
+Epoch 6/20
+84/84 [==============================] - 104s 1s/step - loss: 0.9267 - accuracy: 0.5916 - val_loss: 0.7730 - val_accuracy: 0.6527
+Epoch 7/20
+84/84 [==============================] - 103s 1s/step - loss: 0.8321 - accuracy: 0.6522 - val_loss: 0.8112 - val_accuracy: 0.5749
+Epoch 8/20
+84/84 [==============================] - 103s 1s/step - loss: 0.7410 - accuracy: 0.6581 - val_loss: 0.7993 - val_accuracy: 0.6228
+Epoch 9/20
+84/84 [==============================] - 103s 1s/step - loss: 0.7429 - accuracy: 0.6806 - val_loss: 0.7883 - val_accuracy: 0.6527
+Epoch 10/20
+84/84 [==============================] - 103s 1s/step - loss: 0.7492 - accuracy: 0.6693 - val_loss: 0.7465 - val_accuracy: 0.7126
+Epoch 11/20
+84/84 [==============================] - 103s 1s/step - loss: 0.6786 - accuracy: 0.6872 - val_loss: 0.6962 - val_accuracy: 0.7066
+Epoch 12/20
+84/84 [==============================] - 103s 1s/step - loss: 0.7953 - accuracy: 0.6571 - val_loss: 0.6918 - val_accuracy: 0.7066
+Epoch 13/20
+84/84 [==============================] - 102s 1s/step - loss: 0.6533 - accuracy: 0.7205 - val_loss: 0.6579 - val_accuracy: 0.7485
+Epoch 14/20
+84/84 [==============================] - 102s 1s/step - loss: 0.6716 - accuracy: 0.7318 - val_loss: 0.9868 - val_accuracy: 0.5868
+Epoch 15/20
+84/84 [==============================] - 102s 1s/step - loss: 0.5883 - accuracy: 0.7367 - val_loss: 0.6066 - val_accuracy: 0.7066
+Epoch 16/20
+84/84 [==============================] - 102s 1s/step - loss: 0.5022 - accuracy: 0.8033 - val_loss: 0.8097 - val_accuracy: 0.7246
+Epoch 17/20
+84/84 [==============================] - 101s 1s/step - loss: 0.5274 - accuracy: 0.7882 - val_loss: 0.7433 - val_accuracy: 0.7425
+Epoch 18/20
+84/84 [==============================] - 101s 1s/step - loss: 0.5116 - accuracy: 0.8051 - val_loss: 0.6262 - val_accuracy: 0.7365
+Epoch 19/20
+84/84 [==============================] - 102s 1s/step - loss: 0.5073 - accuracy: 0.8179 - val_loss: 0.5994 - val_accuracy: 0.7545
+Epoch 20/20
+84/84 [==============================] - 101s 1s/step - loss: 0.4628 - accuracy: 0.8352 - val_loss: 0.6315 - val_accuracy: 0.7784

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5 css link -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container ps-5 pe-5">
+            <a class="navbar-brand" href="#">Public Complaint Sorting</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-electricity-tab" data-bs-toggle="pill" data-bs-target="#pills-electricity" type="button" role="tab" aria-controls="pills-electricity" aria-selected="true">Electricity Department</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-street-tab" data-bs-toggle="pill" data-bs-target="#pills-street"
+                            type="button" role="tab" aria-controls="pills-street" aria-selected="false">Street Damage
+                            Department</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-garbage-tab" data-bs-toggle="pill" data-bs-target="#pills-garbage" type="button"
+                            role="tab" aria-controls="pills-garbage" aria-selected="false">garbage</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane p-3 fade show active" id="pills-electricity" role="tabpanel" aria-labelledby="pills-electricity-tab">
+                        <table class="table table-bordered">
+                            <thead >
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Mobile No.</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Complaint Description</th>
+                                    <!--
+                                    <th scope="col">View</th>
+                                    -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for item_dict in electricity_list %}
+                                <tr>
+                                    <td>{{ item_dict['date'] }}</td>
+                                    <td>{{ item_dict['name'] }}</td>
+                                    <td>{{ item_dict['mobile'] }}</td>
+                                    <td>{{ item_dict['address'] }}</td>
+                                    <td>{{ item_dict['description'] }}</td>
+                                    <!--
+                                    <td>
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                View
+                                            </button>
+                                        </div>
+                                    </td>
+                                    -->
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane p-3 fade" id="pills-street" role="tabpanel" aria-labelledby="pills-street-tab">
+                        <table class="table table-bordered">
+                            <thead >
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Mobile No.</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Complaint Description</th>
+                                    <!--
+                                    <th scope="col">View</th>
+                                    -->
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for item_dict in street_list %}
+                                <tr>
+                                    <td>{{ item_dict['date'] }}</td>
+                                    <td>{{ item_dict['name'] }}</td>
+                                    <td>{{ item_dict['mobile'] }}</td>
+                                    <td>{{ item_dict['address'] }}</td>
+                                    <td>{{ item_dict['description'] }}</td>
+                                    <!--
+                                    <td>
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                View
+                                            </button>
+                                        </div>
+                                    </td>
+                                    -->
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane p-3 fade" id="pills-garbage" role="tabpanel" aria-labelledby="pills-garbage-tab">
+                        <table class="table table-bordered">
+                            <thead >
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Mobile No.</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Complaint Description</th>
+                                    <!--
+                                    <th scope="col">View</th>
+                                    -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for item_dict in garbage_list %}
+                                <tr>
+                                    <td>{{ item_dict['date'] }}</td>
+                                    <td>{{ item_dict['name'] }}</td>
+                                    <td>{{ item_dict['mobile'] }}</td>
+                                    <td>{{ item_dict['address'] }}</td>
+                                    <td>{{ item_dict['description'] }}</td>
+                                    <!--
+                                    <td>
+                                        <div class="text-center">
+
+                                                <button type="button" class="btn btn-primary btn-sm" onClick="location.href='{{ item_dict['image_path'] }}'">
+                                                    View
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    -->
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+    <!-- Model -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <img src="https://picsum.photos/500/600" class="img-responsive" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Model End -->
+   
+    <footer>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-sm-12">
+                    <p class="text-center">Copyright © 2021, All Right Reserved </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap js file -->
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

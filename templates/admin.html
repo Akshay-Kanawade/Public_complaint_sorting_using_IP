@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5 css link -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container ps-5 pe-5">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                   
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <div class="container-fluid mt-3">
+       <div class="row">
+           <div class="col-sm-3 p-0">
+            <ul class="list-group">
+                <li class="list-group-item active" aria-current="true">Electricity Department</li>
+                <li class="list-group-item">Water Department</li>
+                <li class="list-group-item">Street Department</li>
+                <li class="list-group-item">Garbage Collector</li>
+            </ul>
+           </div>
+           <div class="col-sm-9 ">
+                <div class="display-6  m-2 text-center">Table</div>
+                <div class="container">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Mobile No.</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Complaint Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aniket</td>
+                                <td>9874563210</td>
+                                <td>Nagar</td>
+                                <td>Compaint descrption</td>
+                            </tr>
+                            <tr>
+                                <td>Vishal</td>
+                                <td>9874563210</td>
+                                <td>Nagar</td>
+                                <td>chayila light jaati raav</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+           </div>
+       </div>
+   </div>
+
+
+   
+    <footer>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-sm-12">
+                    <p class="text-center">Copyright © 2021, All Right Reserved </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap js file -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
